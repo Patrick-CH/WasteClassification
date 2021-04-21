@@ -25,11 +25,6 @@ train_ds_path = "Data/images/train_img528"
 val_ds_path = "Data/images/val_img528"
 test_ds_path = "Data/images/test_img528"
 
-# config = tf.compat.v1.ConfigProto(allow_soft_placement=True)
-# config.gpu_options.allow_growth = True
-# config.gpu_options.per_process_gpu_memory_fraction = 0.7
-# keras.backend.backend
-
 batch_size = 32
 img_height = 528
 img_width = 528
@@ -229,41 +224,3 @@ if __name__ == '__main__':
 
     test(model)
     show_examples(model)
-
-    # accuracy = tf.metrics.Accuracy()
-    # mean_loss = tf.metrics.Mean(name="loss")
-    # @tf.function
-    # def train_step(inputs, labels):
-    #     with tf.GradientTape as tape:
-    #         logit = model(inputs)
-    #         loss_value = loss(labels, logit)
-    #
-    #     gradients = tape.gradient(loss_value, model.trainable_variables)
-    #     optimizer.apply_gradients(zip(gradients, model.trainable_variables))
-    #     step.assign_add(1)
-    #
-    #     accuracy.update_state(labels, tf.argmax(logit, -1))
-    #     return loss_value
-    #
-    # train = train_ds.batch(32).prefetch(1)
-    # val = val_ds.batch(32).prefetch(1)
-
-    # num_epochs = 30
-    # for i in range(num_epochs):
-    #
-    #     for example in train:
-    #         img, label = example["image"], example["label"]
-    #         loss_value = train_step(img, label)
-    #         mean_loss.update_state(loss_value)
-    #         tf.print(
-    #             step, " loss: ", mean_loss.result(), " accuracy ", accuracy.result()
-    #         )
-    #
-    # tf.print("## VALIDATION - ", i)
-    # accuracy.reset_states()
-    # for example in val:
-    #     img, label = example["image"], example["label"]
-    #     logit = model(img)
-    #     accuracy.update_state(label, tf.argmax(logit, -1))
-    # tf.print("accuracy: ", accuracy.result())
-    # accuracy.reset_states()
