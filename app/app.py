@@ -7,7 +7,7 @@ from sort import sort
 from class_names import CLASS_NAMES_W
 
 app = Flask(__name__)
-model = keras.models.load_model('myModel/inceptionv3-transfer-94')
+model = keras.models.load_model('my_models/inceptionv3-transfer')
 class_names = CLASS_NAMES_W
 
 
