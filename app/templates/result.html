@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import form_field %}
+
+{% block content %}
+<h3>预测结果</h3>
+<img src="{{ url_for('static', filename= './upload/img/' + pic_name,_t=val1) }}" width="300" height="400" alt="你的图片被外星人劫持了～～"/>
+{% for k, v in data[:3]: %}
+    <li >
+        {{ "图片为\t{}\t的可能性为\t{}%".format(k, v) }}
+    </li>
+{% endfor %}
+<ul>
+    <li><a href="{{ url_for('upload_sort') }}">继续上传下一张</a></li>
+</ul>
+{% endblock %}

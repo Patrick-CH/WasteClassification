@@ -1,0 +1,4 @@
+my_models/*
+pretrained_models/*
+.gitattributes
+Data/images

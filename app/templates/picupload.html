@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import form_field %}
+
+{% block content %}
+<h3>垃圾分类</h3>
+<form action="/getImg/" method="post" enctype="multipart/form-data">
+	<label for="">请上传图片:</label>
+	<input type="file" name="image"><br>
+	<input type="submit" value="提交">
+</form>
+{% endblock %}
